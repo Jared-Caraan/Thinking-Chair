@@ -1,5 +1,4 @@
 # Thinking-Chair
-For coding practice purposes
 
 Hello
 
