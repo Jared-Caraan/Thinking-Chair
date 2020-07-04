@@ -4,16 +4,17 @@ def solution(arr):
         return arr
     
     visited = []
-    start = base = 0
+    start = 0
+    iter = 0
+    base = 0
     counter = len(arr)
     direction = "right"
   
     while(len(visited) != len(arr)**2):
-        #print("Hello")
+        
         ## Right
         if direction == "right":
-            print(str(start) + " " + str(counter))
-            for i in range(start, start + counter):
+            for i in range(start + iter, start + counter + iter):
                 visited.append(arr[base][i])
                 
                 if (i + 1) == (start + counter):
@@ -32,7 +33,7 @@ def solution(arr):
                     base = i
                     
             direction = "left"
-            start = counter - 1
+            start = (len(arr) - 2) - iter
         
         ## Left
         if direction == "left":
@@ -44,26 +45,28 @@ def solution(arr):
                 
             direction = "up"
             counter -= 1
-            start = counter
             
         ## Up
         if direction == "up":
-            for i in range(start, start - counter, -1):
+            #print(str(start) + " - " + str((start - counter)))
+            for i in range(start, (start - counter), -1):
                 visited.append(arr[i][base])
-                #print(str(start) + " , " + str(start-counter))
+            
                 if (i - 1) == (start - counter):
                     base = i
                     
             direction = "right"
-            print("Base: " + str(base))
-            
+            start = 0
+            iter += 1
+        
     return visited
 
 def main():
 
-    arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]
+    arr = [[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]] 
+    arr2 = [[1,2,3],[4,5,6],[7,8,9]]
     
     print(solution(arr))
-
+    
 if __name__ == "__main__":
 	main()
