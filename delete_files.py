@@ -10,7 +10,7 @@ def del_zip(directory):
                 path = os.path.join(folder,file)
                 info = os.stat(path)
                 mtime = dt.datetime.fromtimestamp(info.st_mtime)
-                if mtime <= (dt.datetime.now() - dt.timedelta(minutes = 25)):
+                if mtime <= (dt.datetime.now() - dt.timedelta(weeks = 4)):
                     os.remove(os.path.join(folder,file))
 
 def main():
