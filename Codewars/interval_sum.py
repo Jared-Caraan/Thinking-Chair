@@ -1,20 +1,25 @@
 def sum_of_intervals(intervals):
+    intervals.sort()
 
-    dictionary = dict()
-    max = 0
+    counter = intervals[0][1] - intervals[0][0]
+    max = intervals[0][1]
 
-    for(key,val) in intervals:
-        print(val)
-        # if max < dictionary.get(key):
-        #     dictionary[key] = val
-        #     max = val
+    for i in range(len(intervals)-1):
+        # new ranges
+        if intervals[i+1][0] >= max and intervals[i+1][0] != intervals[i+1][1]:
+            counter += (intervals[i+1][1] - intervals[i+1][0])
+            max = intervals[i+1][1]
+        
+        # overlapping ranges
+        if (intervals[i+1][0] >= intervals[i][0] and intervals[i+1][0] < intervals[i][1]) and intervals[i+1][1] > max:
+            counter += intervals[i+1][1] - max
+            max = intervals[i+1][1]
+    
+    return counter
 
-    # data_aggregated = [(key,val) for (key, val) in dictionary.items()]
-    #
-    # return data_aggregated
 
 def main():
-    list = [(1,5),(1,124),(2,1),(2,2)]
+    list = [(-100,-50),(-15,-7)]
 
     print(sum_of_intervals(list))
 
