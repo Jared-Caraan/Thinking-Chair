@@ -26,61 +26,61 @@
 
 def stringsMix(s1,s2):
     
-    holder = []
-    countS1 = {}
-    countS2 = {}
-    res = ""
+    # holder = []
+    # countS1 = {}
+    # countS2 = {}
+    # res = ""
 
-    for i in s1:
-        if 97 <= ord(i) and ord(i) <= 122:
-            if i not in countS1:
-                countS1[i] = "1:" + i
-            else:
-                countS1[i] = countS1.get(i,"") + i
+    # for i in s1:
+    #     if 97 <= ord(i) and ord(i) <= 122:
+    #         if i not in countS1:
+    #             countS1[i] = "1:" + i
+    #         else:
+    #             countS1[i] = countS1.get(i,"") + i
 
-    for i in s2:
-        if 97 <= ord(i) and ord(i) <= 122:
-            if i not in countS2:
-                countS2[i] = "2:" + i
-            else:
-                countS2[i] = countS2.get(i,"") + i
+    # for i in s2:
+    #     if 97 <= ord(i) and ord(i) <= 122:
+    #         if i not in countS2:
+    #             countS2[i] = "2:" + i
+    #         else:
+    #             countS2[i] = countS2.get(i,"") + i
     
-    for i in countS1.items():
+    # for i in countS1.items():
         
-        if i[0] in countS2:
-            if (len(countS2[i[0]]) > len(i[1])) and len(countS2[i[0]]) > 3:
-                holder.append((countS2[i[0]][2], countS2[i[0]]))
-            elif len(countS2[i[0]]) == len(i[1]) and (len(countS2[i[0]]) > 3 or len(i[1]) > 3):
-                countS2[i[0]] = "=" + countS2[i[0]][1:]
-                holder.append((countS2[i[0]][2], countS2[i[0]]))
-            elif (len(countS2[i[0]]) < len(i[1])) and len(i[1]) > 3:
-                holder.append(i)
-        elif i[0] not in countS2 and len(i[1]) > 3:
-            holder.append(i)
+    #     if i[0] in countS2:
+    #         if (len(countS2[i[0]]) > len(i[1])) and len(countS2[i[0]]) > 3:
+    #             holder.append((countS2[i[0]][2], countS2[i[0]]))
+    #         elif len(countS2[i[0]]) == len(i[1]) and (len(countS2[i[0]]) > 3 or len(i[1]) > 3):
+    #             countS2[i[0]] = "=" + countS2[i[0]][1:]
+    #             holder.append((countS2[i[0]][2], countS2[i[0]]))
+    #         elif (len(countS2[i[0]]) < len(i[1])) and len(i[1]) > 3:
+    #             holder.append(i)
+    #     elif i[0] not in countS2 and len(i[1]) > 3:
+    #         holder.append(i)
     
-    for i in countS2.items():
-        if i[0] not in countS1 and len(i[1]) > 3:
-            holder.append(i) 
+    # for i in countS2.items():
+    #     if i[0] not in countS1 and len(i[1]) > 3:
+    #         holder.append(i) 
     
-    holder = sorted(sorted(sorted(holder, key= lambda e: ord(e[0])), key= lambda e: e[1][0]), key= lambda e: len(e[1]), reverse=True)
+    # holder = sorted(sorted(sorted(holder, key= lambda e: ord(e[0])), key= lambda e: e[1][0]), key= lambda e: len(e[1]), reverse=True)
 
-    for i in range(len(holder)):
-        res += holder[i][1]
-        if i != len(holder)-1:
-            res += "/"
-    return res
+    # for i in range(len(holder)):
+    #     res += holder[i][1]
+    #     if i != len(holder)-1:
+    #         res += "/"
+    # return res
+
+    s = []
+    lett = "abcdefghijklmnopqrstuvwxyz"
+    for ch in lett:
+        val1, val2 = s1.count(ch), s2.count(ch)
+        if max(val1, val2) >= 2:
+            if val1 > val2: s.append("1:"+val1*ch)
+            elif val1 < val2: s.append("2:"+val2*ch)
+            else: s.append("=:"+val1*ch)
+            
+    s.sort()
+    s.sort(key=len, reverse=True)
+    return "/".join(s)
 
 print(stringsMix("Sadus:cpms>orqn3zecwGvnznSgacs","MynwdKizfd$lvse+gnbaGydxyXzayp"))
-
-    # s = []
-    # lett = "abcdefghijklmnopqrstuvwxyz"
-    # for ch in lett:
-    #     val1, val2 = s1.count(ch), s2.count(ch)
-    #     if max(val1, val2) >= 2:
-    #         if val1 > val2: s.append("1:"+val1*ch)
-    #         elif val1 < val2: s.append("2:"+val2*ch)
-    #         else: s.append("=:"+val1*ch)
-            
-    # s.sort()
-    # s.sort(key=len, reverse=True)
-    # return "/".join(s)

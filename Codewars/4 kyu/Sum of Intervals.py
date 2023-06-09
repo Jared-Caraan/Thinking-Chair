@@ -16,21 +16,19 @@ def sum_of_intervals(intervals):
     max = intervals[0][1]
     min = intervals[0][0]
 
-    # for i in range(1,len(intervals)):
-    #     # new range or single point
-    #     if intervals[i][0] >= max and intervals[i][0] != intervals[i][1]:
-    #         counter += intervals[i][1] - intervals[i][0]
-    #         min,max = intervals[i][0], intervals[i][1]
-    #     elif (intervals[i][0] >= min and intervals[i][0] < max) and intervals[i][1] > max:
-    #         counter += intervals[i][1] - max
-    #         max = intervals[i][1]
+    for i in range(1,len(intervals)):
+        # new range or single point
+        if intervals[i][0] >= max and intervals[i][0] != intervals[i][1]:
+            counter += intervals[i][1] - intervals[i][0]
+            min,max = intervals[i][0], intervals[i][1]
+        elif (intervals[i][0] >= min and intervals[i][0] < max) and intervals[i][1] > max:
+            counter += intervals[i][1] - max
+            max = intervals[i][1]
 
-    for x,y in intervals:
-        print(x,y)
     return counter
 
 def main():
-    # list = [(-498, -397), (-466, -464), (-452, 11), (-304, -25), (-198, -88), (-63, 237), (-61, 339), (-16, 373), (257, 378), (271, 432)]
+
     list = [(1,10),(2,3),(4,20)]
     print(sum_of_intervals(list))
 

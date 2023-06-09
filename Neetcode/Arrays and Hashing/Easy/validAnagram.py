@@ -11,23 +11,23 @@ def isAnagram(self, s: str, t: str) -> bool:
         t.sort()
         return s == t
 
-# def isAnagram(s,t):
-#     if len(s) != len(t):
-#         return False
+def isAnagram(s,t):
+    if len(s) != len(t):
+        return False
     
-#     countS, countT = {},{}
+    countS, countT = {},{}
 
-#     # create hashmap for each letter as key, and their count as value
-#     for i in range(len(s)):
-#         countS[s[i]] = 1 + countS.get(s[i], 0)
-#         countS[t[i]] = 1 + countS.get(t[i], 0)
+    # create hashmap for each letter as key, and their count as value
+    for i in range(len(s)):
+        countS[s[i]] = 1 + countS.get(s[i], 0)
+        countS[t[i]] = 1 + countS.get(t[i], 0)
     
-#     # compare the count of letter of two hashmaps
-#     for c in countS:
-#         if countS[c] != countT.get(c,0):
-#             return False
-#     return True
+    # compare the count of letter of two hashmaps
+    for c in countS:
+        if countS[c] != countT.get(c,0):
+            return False
+    return True
 
-# from collections import Counter
-# def isAnagram(s,t):
-#     return Counter(s) == Counter(t)
+from collections import Counter
+def isAnagram(s,t):
+    return Counter(s) == Counter(t)

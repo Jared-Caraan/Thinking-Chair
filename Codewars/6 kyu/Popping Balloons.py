@@ -44,13 +44,14 @@ def poppingBalloons(pops, balloons):
         
     return holder
 
-# from collections import Counter
-# def freq_stack(pops, balloons):
-#     lst = []
-#     cntr = Counter()
-#     for i, b in enumerate(balloons):
-#         cntr[b] += 1
-#         lst.append((-cntr[b], -i, b))
-    # return lst
-    # return [b for _, _, b in sorted(lst)[:pops]]
+from collections import Counter
+def poppingBalloons(pops, balloons):
+    lst = []
+    cntr = Counter()
+    for i, b in enumerate(balloons):
+        cntr[b] += 1
+        lst.append((-cntr[b], -i, b))
+    print(sorted(lst))
+    return [b for _, _, b in sorted(lst)[:pops]]
+
 print(poppingBalloons(4,[5, 7, 5, 7, 4, 5]))
