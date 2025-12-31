@@ -1,4 +1,4 @@
-# Overview
+### Overview
 1. Linked Lists are not contiguous in memory like a list. Therefore, they have no indexes to access them.
 2. They have **head** and **tail** variables.
 3. The node is both the value and the pointer; you can think of it as a nested dictionary.
@@ -7,7 +7,7 @@ Another representation of a Linked List:
 
 <img width="765" height="444" alt="image" src="https://github.com/user-attachments/assets/8865b59f-0ec6-4f06-8f86-36b62cf357ab" />
 
-# Big-O
+### Big-O
 1. Append a new node at the end - O(1)
    1. It doesn’t matter how many nodes we have on the list. The number of operations to add in the end is exactly the same.
 2. Remove a tail - O(n)
@@ -23,7 +23,7 @@ Another representation of a Linked List:
 7. Finding a node - O(n)
    1. Iterating through the linked list to find the node.
 
-# Constructors
+### Constructors
 ```python
 class Node:
     def __init__(self, value):
@@ -42,8 +42,8 @@ class LinkedList:
 my_linked_list = LinkedList(11)
 ```
 
-# LL Functions
-## Print
+### LL Functions
+#### Print
 ```python
 def print_list(self):
     temp = self.head
@@ -54,7 +54,7 @@ def print_list(self):
 
 my_linked_list.print_list()
 ```
-## Append
+#### Append
 ```python
 def append(self, value):
     new_node = Node(value)
@@ -72,7 +72,7 @@ my_linked_list.append(3)
 my_linked_list.append(23)
 my_linked_list.append(7)
 ```
-## Pop
+#### Pop
 ```python
 def pop(self):
     if self.length == 0: # edge case where it’s empty
@@ -104,7 +104,7 @@ print(my_linked_list.pop())
 # (0) Items -Returns None
 print(my_linked_list.pop())
 ```
-## Prepend
+#### Prepend
 ```python
 def prepend(self, value):
     new_node = Node(value)
@@ -124,7 +124,7 @@ my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.prepend(0)
 ```
-## Pop First
+#### Pop First
 ```python
 def pop_first(self):
     if self.length == 0: # edge case where it’s empty
@@ -140,7 +140,7 @@ def pop_first(self):
 
     return temp.value
 ```
-## Get
+#### Get
 ```python
 def get(self, index):
     if index < 0 or index > self.length:
@@ -151,7 +151,7 @@ def get(self, index):
         temp = temp.next
     return temp.value
 ```
-## Set
+#### Set
 ```python
 def set(self, index, value):
     if index < 0 or index > self.length:
@@ -162,7 +162,7 @@ def set(self, index, value):
         temp = temp.next
     return temp.value
 ```
-## Insert
+#### Insert
 ```python
 def insert(self, index, value):
     if index < 0 or index > self.length:
