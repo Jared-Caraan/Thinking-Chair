@@ -8,19 +8,19 @@ Another representation of a Linked List:
 <img width="765" height="444" alt="image" src="https://github.com/user-attachments/assets/8865b59f-0ec6-4f06-8f86-36b62cf357ab" />
 
 ### Big-O
-1. Append a new node at the end - O(1)
+1. Append a new node at the end - `O(1)`
    1. It doesn’t matter how many nodes we have on the list. The number of operations to add in the end is exactly the same.
-2. Remove a tail - O(n)
+2. Remove a tail - `O(n)`
    1. Iterate through the entire linked list to find the pointer of the last node, then set the tail to the last node.
-3. Adding a node to the front - O(1)
+3. Adding a node to the front - `O(1)`
    1. Same reason for the first scenario.
-4. Removing the first node - O(1)
+4. Removing the first node - `O(1)`
    1. Repointing the head variable to the next node. The size of the linked list doesn’t matter.
-5. Inserting a node in the middle - O(n)
+5. Inserting a node in the middle - `O(n)`
    1. Iterating through the linked list to distinguish the precedent node, then connect the new node to the antecedent node, and finally connect the precedent to the new node.
-6. Removing a node in the middle - O(n)
+6. Removing a node in the middle - `O(n)`
    1. Iterating through the linked list to find the node to be removed. Then update the pointers accordingly.
-7. Finding a node - O(n)
+7. Finding a node - `O(n)`
    1. Iterating through the linked list to find the node.
 
 ### Constructors
