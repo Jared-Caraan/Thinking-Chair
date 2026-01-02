@@ -7,6 +7,8 @@ Another representation of a Linked List:
 
 <img width="765" height="444" alt="image" src="https://github.com/user-attachments/assets/8865b59f-0ec6-4f06-8f86-36b62cf357ab" />
 
+##
+
 ### Big-O
 1. Append a new node at the end - `O(1)`
    1. It doesn’t matter how many nodes we have on the list. The number of operations to add in the end is exactly the same.
@@ -22,6 +24,8 @@ Another representation of a Linked List:
    1. Iterating through the linked list to find the node to be removed. Then update the pointers accordingly.
 7. Finding a node - `O(n)`
    1. Iterating through the linked list to find the node.
+
+##
 
 ### Constructors
 ```python
@@ -42,6 +46,8 @@ class LinkedList:
 my_linked_list = LinkedList(11)
 ```
 
+##
+
 ### LL Functions
 #### Print
 ```python
@@ -54,6 +60,9 @@ def print_list(self):
 
 my_linked_list.print_list()
 ```
+
+##
+
 #### Append
 
 **Intuition**
@@ -82,6 +91,9 @@ my_linked_list.append(3)
 my_linked_list.append(23)
 my_linked_list.append(7)
 ```
+
+##
+
 #### Pop
 ```python
 def pop(self):
@@ -114,6 +126,9 @@ print(my_linked_list.pop())
 # (0) Items -Returns None
 print(my_linked_list.pop())
 ```
+
+##
+
 #### Prepend
 ```python
 def prepend(self, value):
@@ -134,6 +149,9 @@ my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.prepend(0)
 ```
+
+##
+
 #### Pop First
 ```python
 def pop_first(self):
@@ -150,6 +168,9 @@ def pop_first(self):
 
     return temp.value
 ```
+
+##
+
 #### Get
 ```python
 def get(self, index):
@@ -161,6 +182,9 @@ def get(self, index):
         temp = temp.next
     return temp.value
 ```
+
+##
+
 #### Set
 ```python
 def set(self, index, value):
@@ -172,6 +196,9 @@ def set(self, index, value):
         temp = temp.next
     return temp.value
 ```
+
+##
+
 #### Insert
 ```python
 def insert(self, index, value):
