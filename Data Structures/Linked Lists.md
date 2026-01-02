@@ -55,6 +55,16 @@ def print_list(self):
 my_linked_list.print_list()
 ```
 #### Append
+
+**Intuition**
+1. Create a new node.
+2. We'll have that last item on that list point at the new node.
+3. Then we have the tail point at the new node.
+
+**Edge Case**
+1. We don't have any items.
+2. In this case, we want both head and tail point at the new node.
+
 ```python
 def append(self, value):
     new_node = Node(value)
