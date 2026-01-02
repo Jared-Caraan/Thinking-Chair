@@ -130,7 +130,7 @@ def pop(self):
         self.head = None
         self.tail = None
     
-    return temp.value
+    return temp
 
 my_linked_list = LinkedList(1)
 my_linked_list.append(2)
@@ -206,12 +206,21 @@ def pop_first(self):
     if self.length == 0:
         self.tail == None
 
-    return temp.value
+    return temp
 ```
 
 ##
 
 #### Get
+
+**Intuition (two or more items)**
+1. Point `temp` to the current `head`.
+2. Iterate through the LL a number of times equal to the index specified
+
+**Edge Cases**
+1. Invalid index.
+      1. Return `None`.
+
 ```python
 def get(self, index):
     if index < 0 or index > self.length:
@@ -220,7 +229,7 @@ def get(self, index):
 
     for _ in range(index):
         temp = temp.next
-    return temp.value
+    return temp
 ```
 
 ##
