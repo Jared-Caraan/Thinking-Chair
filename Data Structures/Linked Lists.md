@@ -103,6 +103,7 @@ my_linked_list.append(7)
 3. Point the `tail` to `pre` and detach `tail.next`.
 4. Decrement the length of the LL.
 5. Add a condition where if the final LL is empty, point the `head` and `tail` to `None`.
+6. Return the node.
 
 **Edge Cases**
 1. We don't have any items.
@@ -184,6 +185,7 @@ my_linked_list.prepend(0)
 2. Move the `head` to the next node.
 3. Detach `temp` from the rest of the LL.
 4. Decrement the length of the LL.
+5. Return the node.
 
 **Edge Cases**
 1. We don't have any items.
