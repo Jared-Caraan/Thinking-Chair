@@ -65,14 +65,15 @@ my_linked_list.print_list()
 
 #### Append
 
-**Intuition**
+**Intuition (one or more items)**
 1. Create a new node.
 2. We'll have that last item on that list point at the new node.
-3. Then we have the tail point at the new node.
+3. Then we have the `tail` point at the new node.
+4. Increment the length of the LL.
 
 **Edge Case**
 1. We don't have any items.
-2. In this case, we want both head and tail point at the new node.
+      1. In this case, we want both head and tail point at the new node.
 
 ```python
 def append(self, value):
@@ -95,6 +96,20 @@ my_linked_list.append(7)
 ##
 
 #### Pop
+
+**Intuition (two or more items)**
+1. Create two variables `pre` and `temp`, both pointing at the head.
+2. Loop through the LL while `temp` can point to the next node. Have `pre` point to `temp`. At the end, `temp` will be at the last node, while `pre` is at the second to the last node.
+3. Point the `tail` to `pre` and detach `tail.next`.
+4. Decrement the length of the LL.
+5. Add a condition where if the final LL is empty, point the `head` and `tail` to `None`.
+
+**Edge Cases**
+1. We don't have any items.
+      1. Return `None` 
+2. We have only one node.
+      2. Refer to Step 5.
+
 ```python
 def pop(self):
     if self.length == 0: # edge case where it’s empty
@@ -128,6 +143,15 @@ print(my_linked_list.pop())
 ```
 
 ##
+
+**Intuition (two or more items)**
+1. Point the new node at the current `head` of the LL.
+2. Set the `head` to the new node.
+3. Increment the length of the LL.
+
+**Edge Cases**
+1. We don't have any items.
+      1. Point the `head` and `tail` to the new node.
 
 #### Prepend
 ```python
