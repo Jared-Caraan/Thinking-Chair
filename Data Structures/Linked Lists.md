@@ -144,6 +144,8 @@ print(my_linked_list.pop())
 
 ##
 
+#### Prepend
+
 **Intuition (two or more items)**
 1. Point the new node at the current `head` of the LL.
 2. Set the `head` to the new node.
@@ -153,7 +155,6 @@ print(my_linked_list.pop())
 1. We don't have any items.
       1. Point the `head` and `tail` to the new node.
 
-#### Prepend
 ```python
 def prepend(self, value):
     new_node = Node(value)
@@ -177,6 +178,19 @@ my_linked_list.prepend(0)
 ##
 
 #### Pop First
+
+**Intuition (two or more items)**
+1. Point `temp` to the current `head`.
+2. Move the `head` to the next node.
+3. Detach `temp` from the rest of the LL.
+4. Decrement the length of the LL.
+
+**Edge Cases**
+1. We don't have any items.
+      1. Return `None`.
+2. We have one item.
+      2. After step 4, just add the condition to point the `tail` to `None`.
+
 ```python
 def pop_first(self):
     if self.length == 0: # edge case where it’s empty
