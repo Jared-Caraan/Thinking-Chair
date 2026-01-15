@@ -48,8 +48,9 @@ my_linked_list = LinkedList(11)
 
 ##
 
-### LL Functions
-#### Print
+## LL Functions
+### Print List
+#### Code
 ```python
 def print_list(self):
     temp = self.head
@@ -60,8 +61,9 @@ def print_list(self):
 
 my_linked_list.print_list()
 ```
+#### Visual
+![print](https://github.com/user-attachments/assets/89865c91-f3fc-425d-9e11-c6829f38f5c4)
 
-![print](https://github.com/user-attachments/assets/0ae662fd-cfbf-4a44-895c-c8c889a533b4)
 
 ##
 
