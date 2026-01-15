@@ -96,13 +96,12 @@ my_linked_list.append(3)
 my_linked_list.append(23)
 my_linked_list.append(7)
 ```
-
 #### Visual
 ![append](https://github.com/user-attachments/assets/9b5d4368-9a4d-45b4-b3c0-dd095d886dbb)
 
 ##
 
-#### Pop
+### Pop
 
 **Intuition (two or more items)**
 1. Create two variables, both pointing at the `head`.
@@ -115,8 +114,9 @@ my_linked_list.append(7)
 1. We don't have any items.
       1. Return `None` 
 2. We have only one node.
-      2. After detaching the tail, point both `head` and `tail` to `None`.
+      1. After detaching the tail, point both `head` and `tail` to `None`.
 
+#### Code
 ```python
 def pop(self):
     if self.length == 0: # edge case where it’s empty
@@ -148,6 +148,8 @@ print(my_linked_list.pop())
 # (0) Items -Returns None
 print(my_linked_list.pop())
 ```
+#### Visual
+![pop](https://github.com/user-attachments/assets/d5824845-8a9e-4caa-9118-179d3482718b)
 
 ##
 
