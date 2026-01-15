@@ -64,10 +64,9 @@ my_linked_list.print_list()
 #### Visual
 ![print](https://github.com/user-attachments/assets/89865c91-f3fc-425d-9e11-c6829f38f5c4)
 
-
 ##
 
-#### Append
+### Append
 
 **Intuition (one or more items)**
 1. Create a new node.
@@ -79,6 +78,7 @@ my_linked_list.print_list()
 1. We don't have any items.
       1. In this case, we want both `head` and `tail` point at the new node.
 
+#### Code
 ```python
 def append(self, value):
     new_node = Node(value)
@@ -96,6 +96,9 @@ my_linked_list.append(3)
 my_linked_list.append(23)
 my_linked_list.append(7)
 ```
+
+#### Visual
+![append](https://github.com/user-attachments/assets/9b5d4368-9a4d-45b4-b3c0-dd095d886dbb)
 
 ##
 
