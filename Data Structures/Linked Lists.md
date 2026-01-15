@@ -61,6 +61,8 @@ def print_list(self):
 my_linked_list.print_list()
 ```
 
+![print](https://github.com/user-attachments/assets/0ae662fd-cfbf-4a44-895c-c8c889a533b4)
+
 ##
 
 #### Append
@@ -69,7 +71,7 @@ my_linked_list.print_list()
 1. Create a new node.
 2. We'll have that last item on that list point at the new node.
 3. Then we have the `tail` point at the new node.
-4. Incrase the size of the LL.
+4. Increase the size of the LL.
 
 **Edge Case**
 1. We don't have any items.
