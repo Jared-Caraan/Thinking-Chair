@@ -189,12 +189,12 @@ my_linked_list.prepend(0)
 
 ##
 
-#### Pop First
+### Pop First
 
 **Intuition (two or more items)**
-1. Point `temp` to the current `head`.
+1. Point a variable to the current `head`.
 2. Move the `head` to the next node.
-3. Detach `temp` from the rest of the LL.
+3. Detach the variable from the rest of the LL.
 4. Decrease the length of the LL.
 5. Return the node.
 
@@ -202,8 +202,9 @@ my_linked_list.prepend(0)
 1. We don't have any items.
       1. Return `None`.
 2. We have one item.
-      2. After step 4, just add the condition to point the `tail` to `None`.
+      1. Since the `head` is already pointing to `None`, do the same thing to the `tail`.
 
+#### Code
 ```python
 def pop_first(self):
     if self.length == 0: # edge case where it’s empty
@@ -219,6 +220,8 @@ def pop_first(self):
 
     return temp
 ```
+#### Visual
+![pop_first](https://github.com/user-attachments/assets/e9c60257-2619-45ce-8d91-1b141985f6d9)
 
 ##
 
