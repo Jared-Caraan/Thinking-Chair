@@ -153,7 +153,7 @@ print(my_linked_list.pop())
 
 ##
 
-#### Prepend
+### Prepend
 
 **Intuition (two or more items)**
 1. Point the new node at the current `head` of the LL.
@@ -164,6 +164,7 @@ print(my_linked_list.pop())
 1. We don't have any items.
       1. Point the `head` and `tail` to the new node.
 
+#### Code
 ```python
 def prepend(self, value):
     new_node = Node(value)
@@ -183,6 +184,7 @@ my_linked_list = LinkedList(1)
 my_linked_list.append(2)
 my_linked_list.prepend(0)
 ```
+#### Visual
 
 ##
 
@@ -192,7 +194,7 @@ my_linked_list.prepend(0)
 1. Point `temp` to the current `head`.
 2. Move the `head` to the next node.
 3. Detach `temp` from the rest of the LL.
-4. Decrement the length of the LL.
+4. Decrease the length of the LL.
 5. Return the node.
 
 **Edge Cases**
