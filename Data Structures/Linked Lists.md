@@ -185,6 +185,7 @@ my_linked_list.append(2)
 my_linked_list.prepend(0)
 ```
 #### Visual
+![prepend](https://github.com/user-attachments/assets/8cd7e801-03ee-4a17-9de0-7efd289fd46c)
 
 ##
 
