@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name ☕ Portfolio</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f6f1eb;
+      --card: #fffaf5;
+      --text: #2f2a26;
+      --muted: #6b6258;
+      --accent: #8b5e3c;
+      --border: #e6ddd4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0.4rem 0 0.8rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      margin: 0 0.6rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Your Name</h1>
+    <p>
+      Software developer with a love for clean code, thoughtful design,
+      and building things that feel good to use.
+    </p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>☕ About</h2>
+      <div class="card">
+        <p>
+          I enjoy working on projects that sit at the intersection of
+          logic and craft — from small programming exercises to
+          full-fledged applications. I care about readability,
+          maintainability, and calm user experiences.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>📓 Projects</h2>
+
+      <div class="card">
+        <h3>Project One</h3>
+        <p>
+          A short description of what this project does and why it’s interesting.
+          Mention the tech stack or problem you solved.
+        </p>
+        <a href="https://github.com/yourusername/project-one" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>
+          Another cozy little project. Clean logic, thoughtful structure,
+          maybe a fun edge case or two.
+        </p>
+        <a href="https://github.com/yourusername/project-two" target="_blank">
+          View on GitHub →
+        </a>
+      </div>
+
+    </section>
+
+    <section>
+      <h2>📬 Find Me</h2>
+      <div class="card links">
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yourname" target="_blank">LinkedIn</a>
+        <a href="mailto:youremail@example.com">Email</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Built with care, caffeine, and curiosity ☕
+  </footer>
+
+</body>
+</html>
