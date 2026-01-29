@@ -10,59 +10,137 @@
 
   <style>
     :root {
-      --bg-base: #2c2f33;       /* bleak slate gray */
-      --bg-gradient-light: #3a3d42; /* subtle overhead light */
-      --panel: #373b40;         /* panel walls */
-      --border: #474b51;
-      --text: #d7d9dc;
-      --muted: #a3a6aa;
-      --accent: #f29f05;        /* hazard orange */
+      --bg: #0f1412;
+      --panel: #151b18;
+      --border: #26302b;
+      --text: #e6ece9;
+      --muted: #9aa6a0;
+      --accent: #f29f05;
       --green: #7fb8a2;
-      --glow: rgba(127, 184, 162, 0.15);
+      --glow: rgba(127, 184, 162, 0.25);
     }
-  
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       background:
-        /* subtle vertical panel lines for conference wall */
-        repeating-linear-gradient(
-          to right,
-          var(--panel) 0,
-          var(--panel) 1px,
-          var(--border) 2px,
-          var(--panel) 3px,
-          var(--panel) 15px
-        ),
-        /* soft top center overhead lighting */
-        radial-gradient(
-          circle at center top,
-          var(--bg-gradient-light),
-          var(--bg-base) 80%
-        );
+        radial-gradient(circle at 50% -20%, rgba(127,184,162,0.08), transparent 55%),
+        repeating-linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 120px),
+        repeating-linear-gradient(to bottom, rgba(255,255,255,0.015), rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px),
+        linear-gradient(180deg, #0d1210, #0f1412);
       color: var(--text);
       font-family: 'IBM Plex Sans', sans-serif;
       line-height: 1.6;
-      text-shadow: none; /* remove glowing text for professionalism */
+      text-shadow: 0 0 6px rgba(127, 184, 162, 0.12);
     }
-  
-    header, main, footer {
-      background: transparent;
+
+    header {
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      box-shadow: inset 0 -1px 0 rgba(127,184,162,0.08);
     }
-  
+
+    header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 0 8px var(--glow);
+    }
+
+    header h1 {
+      font-weight: 500;
+      font-size: 2rem;
+      margin: 0;
+      text-shadow: 0 0 10px rgba(127,184,162,0.18);
+    }
+
+    main {
+      max-width: 720px;
+      margin: 2rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    h2 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      text-shadow: 0 0 6px rgba(242, 159, 5, 0.25);
+    }
+
     .panel {
-      background: var(--panel);
+      background: linear-gradient(180deg, #151b18, #121715);
       border: 1px solid var(--border);
-      box-shadow: none; /* remove glow for subtlety */
+      border-radius: 6px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      box-shadow:
+        0 0 0 1px rgba(127,184,162,0.05),
+        0 0 18px rgba(127,184,162,0.06);
+      transition: box-shadow 0.3s ease;
     }
-  
+
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 3px solid var(--accent);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .panel:hover {
+      box-shadow:
+        0 0 12px var(--accent),
+        0 0 25px var(--accent);
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      text-shadow: 0 0 6px rgba(127,184,162,0.15);
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
     a {
       color: var(--green);
-      text-shadow: none;
+      font-weight: 500;
+      text-decoration: none;
+      text-shadow: 0 0 6px rgba(127,184,162,0.2);
     }
-  
+
     a:hover {
       text-decoration: underline;
     }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem 3rem;
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-shadow: 0 0 4px rgba(127,184,162,0.12);
+    }
+
   </style>
 </head>
 <body>
