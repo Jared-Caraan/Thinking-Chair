@@ -15,6 +15,6 @@ SELECT
   END AS res
 FROM love;
 
--- Alternative answer
+-- Clever
 SELECT flower1, flower2, (flower1 + flower2) % 2 = 1 AS res 
 FROM love
