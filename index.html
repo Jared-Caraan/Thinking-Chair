@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name ☕ Portfolio</title>
+  <title>Jared — Data Structures Research Lab</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f6f1eb;
-      --card: #fffaf5;
-      --text: #2f2a26;
-      --muted: #6b6258;
-      --accent: #8b5e3c;
-      --border: #e6ddd4;
+      --bg: #0f1412;
+      --panel: #151b18;
+      --border: #26302b;
+      --text: #e6ece9;
+      --muted: #9aa6a0;
+      --accent: #f29f05; /* hazard orange */
+      --green: #7fb8a2;
+      --glow: rgba(127, 184, 162, 0.25);
     }
 
     * {
@@ -24,34 +26,54 @@
 
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
+      background:
+        /* faint lab lighting */
+        radial-gradient(circle at 50% -20%, rgba(127,184,162,0.08), transparent 55%),
+        /* vertical panel seams */
+        repeating-linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 120px),
+        /* horizontal scan lines */
+        repeating-linear-gradient(to bottom, rgba(255,255,255,0.015), rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px),
+        /* base gradient */
+        linear-gradient(180deg, #0d1210, #0f1412);
       color: var(--text);
-      line-height: 1.7;
+      font-family: 'IBM Plex Sans', sans-serif;
+      line-height: 1.6;
+      text-shadow: 0 0 6px rgba(127, 184, 162, 0.12);
     }
 
     header {
       padding: 4rem 1.5rem 3rem;
       text-align: center;
+      border-bottom: 1px solid var(--border);
+      box-shadow: inset 0 -1px 0 rgba(127,184,162,0.08);
+    }
+
+    header .tag {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--green);
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 0 8px var(--glow);
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      margin-bottom: 0.5rem;
+      font-weight: 500;
+      font-size: 2.4rem;
+      margin: 0 0 0.5rem;
+      text-shadow: 0 0 10px rgba(127,184,162,0.18);
     }
 
     header p {
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto;
       color: var(--muted);
-      font-size: 1.05rem;
     }
 
     main {
       max-width: 900px;
       margin: 0 auto;
-      padding: 0 1.5rem 4rem;
+      padding: 3rem 1.5rem 4rem;
     }
 
     section {
@@ -59,40 +81,51 @@
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+      text-shadow: 0 0 6px rgba(242, 159, 5, 0.25);
     }
 
-    .card {
-      background: var(--card);
+    .panel {
+      background: linear-gradient(180deg, #151b18, #121715);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 6px;
       padding: 1.5rem;
       margin-bottom: 1.25rem;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      box-shadow:
+        0 0 0 1px rgba(127,184,162,0.05),
+        0 0 18px rgba(127,184,162,0.06);
     }
 
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    .panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-left: 3px solid var(--accent);
+      opacity: 0.7;
+      pointer-events: none;
     }
 
-    .card h3 {
+    .panel h3 {
       margin-top: 0;
-      margin-bottom: 0.3rem;
-      font-size: 1.1rem;
+      font-weight: 500;
+      text-shadow: 0 0 6px rgba(127,184,162,0.15);
     }
 
-    .card p {
-      margin: 0.4rem 0 0.8rem;
+    .panel p {
       color: var(--muted);
+      margin-bottom: 0.75rem;
     }
 
     a {
-      color: var(--accent);
+      color: var(--green);
       text-decoration: none;
       font-weight: 500;
+      text-shadow: 0 0 6px rgba(127,184,162,0.2);
     }
 
     a:hover {
@@ -100,82 +133,87 @@
     }
 
     footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.5rem 3rem;
       text-align: center;
-      padding: 2rem 1rem 3rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      text-shadow: 0 0 4px rgba(127,184,162,0.12);
     }
 
-    .links a {
-      margin: 0 0.6rem;
-    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <h1>Your Name</h1>
+    <div class="tag">LAMBDA DATA RESEARCH FACILITY</div>
+    <h1>Jared Dominic Caraan</h1>
     <p>
-      Software developer with a love for clean code, thoughtful design,
-      and building things that feel good to use.
+      Data Engineer & Machine Learning Enthusiast — analyzing coding exercises and data structures, building reliable pipelines, and exploring computational systems.
     </p>
   </header>
 
   <main>
 
     <section>
-      <h2>☕ About</h2>
-      <div class="card">
+      <h2>ABOUT</h2>
+      <div class="panel">
         <p>
-          I enjoy working on projects that sit at the intersection of
-          logic and craft — from small programming exercises to
-          full-fledged applications. I care about readability,
-          maintainability, and calm user experiences.
+          I focus on analyzing programming exercises, reviewing data structures, and designing scalable systems. I enjoy turning raw code and datasets into clear, reliable, and reusable workflows.
         </p>
       </div>
     </section>
 
     <section>
-      <h2>📓 Projects</h2>
+      <h2>PROJECTS & EXERCISES</h2>
 
-      <div class="card">
-        <h3>Project One</h3>
+      <div class="panel">
+        <h3>Data Structures Lab</h3>
         <p>
-          A short description of what this project does and why it’s interesting.
-          Mention the tech stack or problem you solved.
+          Hands-on exercises covering arrays, linked lists, trees, and graphs, with detailed analysis and implementation review.
         </p>
-        <a href="https://github.com/yourusername/project-one" target="_blank">
-          View on GitHub →
+        <a href="https://jared-caraan.github.io/Thinking-Chair/" target="_blank">
+          Review Foundational Exercises →
         </a>
       </div>
 
-      <div class="card">
-        <h3>Project Two</h3>
+      <div class="panel">
+        <h3>Algorithm Analysis Hub</h3>
         <p>
-          Another cozy little project. Clean logic, thoughtful structure,
-          maybe a fun edge case or two.
+          Evaluating algorithms through practice exercises, complexity analysis, and edge-case handling.
         </p>
-        <a href="https://github.com/yourusername/project-two" target="_blank">
-          View on GitHub →
+        <a href="https://jared-caraan.github.io/dbt_reviewer/" target="_blank">
+          Inspect Code Review Data →
         </a>
       </div>
 
     </section>
 
     <section>
-      <h2>📬 Find Me</h2>
-      <div class="card links">
-        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-        <a href="mailto:youremail@example.com">Email</a>
+      <h2>CONTACT</h2>
+      <div class="panel">
+        <a href="https://www.linkedin.com/in/jared-dominic-caraan-152272143/" target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a><br />
+
+        <span>Phone:</span>
+        <a href="tel:+639177181960">+63 917 718 1960</a><br />
+
+        <span>Email:</span>
+        <a href="mailto:j.caraan04@gmail.com">j.caraan04@gmail.com</a><br />
+
+        <span>Alternate:</span>
+        <a href="mailto:j.caraan04@outlook.com">j.caraan04@outlook.com</a>
       </div>
     </section>
 
   </main>
 
   <footer>
-    Built with care, caffeine, and curiosity ☕
+    Lambda Data Research Facility · ML Division<br />
+    “Data reliability, scalable learning systems, and clarity.”
   </footer>
 
 </body>
