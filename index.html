@@ -17,31 +17,21 @@
       --muted: #9aa6a0;
       --accent: #f29f05;
       --green: #7fb8a2;
-      --glow: rgba(127, 184, 162, 0.25);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
-      background:
-        radial-gradient(circle at 50% -20%, rgba(127,184,162,0.08), transparent 55%),
-        repeating-linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.02) 1px, transparent 1px, transparent 120px),
-        repeating-linear-gradient(to bottom, rgba(255,255,255,0.015), rgba(255,255,255,0.015) 1px, transparent 1px, transparent 3px),
-        linear-gradient(180deg, #0d1210, #0f1412);
+      background: linear-gradient(180deg, #0d1210, #0f1412);
       color: var(--text);
       font-family: 'IBM Plex Sans', sans-serif;
-      line-height: 1.6;
-      text-shadow: 0 0 6px rgba(127, 184, 162, 0.12);
     }
 
     header {
-      padding: 3rem 1.5rem 2rem;
+      padding: 2.5rem 1.5rem;
       text-align: center;
       border-bottom: 1px solid var(--border);
-      box-shadow: inset 0 -1px 0 rgba(127,184,162,0.08);
     }
 
     header .tag {
@@ -50,134 +40,169 @@
       font-size: 0.85rem;
       letter-spacing: 0.05em;
       margin-bottom: 0.5rem;
-      text-shadow: 0 0 8px var(--glow);
-    }
-
-    header h1 {
-      font-weight: 500;
-      font-size: 2rem;
-      margin: 0;
-      text-shadow: 0 0 10px rgba(127,184,162,0.18);
     }
 
     main {
-      max-width: 720px;
+      max-width: 1100px;
       margin: 2rem auto 4rem;
       padding: 0 1.5rem;
-    }
-
-    section {
-      margin-bottom: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
     }
 
     h2 {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 1.1rem;
+      font-size: 1rem;
       letter-spacing: 0.08em;
       color: var(--accent);
-      margin-bottom: 1.25rem;
-      text-shadow: 0 0 6px rgba(242, 159, 5, 0.25);
+      margin-bottom: 1rem;
     }
 
     .panel {
       background: linear-gradient(180deg, #151b18, #121715);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 1.5rem 1.75rem;
-      margin-bottom: 1.5rem;
-      position: relative;
-      box-shadow:
-        0 0 0 1px rgba(127,184,162,0.05),
-        0 0 18px rgba(127,184,162,0.06);
-      transition: box-shadow 0.3s ease;
+      padding: 1.4rem;
+      margin-bottom: 1.2rem;
     }
 
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      border-left: 3px solid var(--accent);
-      opacity: 0.7;
-      pointer-events: none;
+    .panel a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
     }
 
-    .panel:hover {
-      box-shadow:
-        0 0 12px var(--accent),
-        0 0 25px var(--accent);
+    .panel a:hover {
+      text-decoration: underline;
     }
 
-    .panel h3 {
+    /* RIGHT SIDE VIEWER */
+
+    #viewer {
+      background: linear-gradient(180deg, #141a17, #101412);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.5rem;
+      min-height: 300px;
+    }
+
+    #viewer h3 {
+      font-family: 'JetBrains Mono', monospace;
       margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      text-shadow: 0 0 6px rgba(127,184,162,0.15);
+      font-size: 0.95rem;
+      color: var(--green);
     }
 
-    .panel p {
-      color: var(--muted);
-      margin-bottom: 1rem;
+    .file {
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
       font-size: 0.9rem;
     }
 
-    a {
-      color: var(--green);
-      font-weight: 500;
+    .file a {
+      color: var(--text);
       text-decoration: none;
-      text-shadow: 0 0 6px rgba(127,184,162,0.2);
     }
 
-    a:hover {
-      text-decoration: underline;
+    .file a:hover {
+      color: var(--green);
     }
 
     footer {
       border-top: 1px solid var(--border);
-      padding: 2rem 1.5rem 3rem;
+      padding: 2rem;
       text-align: center;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.8rem;
       color: var(--muted);
-      text-shadow: 0 0 4px rgba(127,184,162,0.12);
     }
 
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="tag">THINKING-CHAIR REPOSITORY</div>
-    <h1>Code Analysis & Data Structures</h1>
-  </header>
+<header>
+  <div class="tag">THINKING-CHAIR REPOSITORY</div>
+  <h1>Code Analysis & Data Structures</h1>
+</header>
 
-  <main>
+<main>
 
+  <!-- LEFT SIDE -->
+  <div>
     <section>
       <h2>Data Structures</h2>
       <div class="panel">
-        <p>
-          Collection of fundamental data structures including arrays, linked lists, trees, graphs, and more with implementations and analyses.
-        </p>
-        <a href="./Data%20Structures/" target="_blank" rel="noopener noreferrer">Explore Data Structures →</a>
+        <p>Fundamental data structures with implementations and analysis.</p>
+        <a onclick="loadFolder('Data Structures')">Explore Data Structures →</a>
       </div>
     </section>
 
     <section>
       <h2>Programming Platforms</h2>
       <div class="panel">
-        <p>
-          Exercises and solutions across various coding platforms, showcasing problem-solving skills and algorithmic thinking.
-        </p>
-        <a href="./Programming%20Platforms/" target="_blank" rel="noopener noreferrer">Explore Programming Platforms →</a>
+        <p>Exercises from competitive and practice coding platforms.</p>
+        <a onclick="loadFolder('Programming Platforms')">Explore Programming Platforms →</a>
       </div>
     </section>
+  </div>
 
-  </main>
+  <!-- RIGHT SIDE -->
+  <div id="viewer">
+    <h3>Repository Contents</h3>
+    <p class="muted">Select a section to view its contents.</p>
+    <div id="file-list"></div>
+  </div>
 
-  <footer>
-    Thinking-Chair · Data Engineering Division<br />
-    “Reliability, clarity, and scalable code.”
-  </footer>
+</main>
+
+<footer>
+  Thinking-Chair · Data Engineering Division<br />
+  “Reliability, clarity, and scalable code.”
+</footer>
+
+<script>
+  const OWNER = "Jared-Caraan";
+  const REPO = "Thinking-Chair";
+
+  async function loadFolder(path) {
+    const viewer = document.getElementById("file-list");
+    viewer.innerHTML = "Loading…";
+
+    const url = `https://api.github.com/repos/${OWNER}/${REPO}/contents/${encodeURIComponent(path)}`;
+
+    try {
+      const res = await fetch(url);
+      const data = await res.json();
+
+      viewer.innerHTML = "";
+
+      data.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "file";
+
+        div.innerHTML = `
+          <a href="${item.html_url}" target="_blank">
+            ${item.type === "dir" ? "📁" : "📄"} ${item.name}
+          </a>
+        `;
+
+        viewer.appendChild(div);
+      });
+
+    } catch (e) {
+      viewer.innerHTML = "Failed to load contents.";
+    }
+  }
+</script>
 
 </body>
 </html>
