@@ -162,6 +162,20 @@
         0 0 22px rgba(127,184,162,0.35);
     }
 
+    .file {
+      padding: 0.45rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .file:last-child {
+      border-bottom: none;
+    }
+
+    .file a {
+      display: inline-block;
+      width: 100%;
+    }
+
   </style>
 </head>
 
@@ -193,6 +207,34 @@
       <div class="panel">
         <p>Exercises from competitive and practice coding platforms.</p>
         <a onclick="loadFolder('Programming Platforms')">Explore Programming Platforms →</a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Solution Analysis Logs</h2>
+      <div class="panel">
+        <p>
+          Detailed breakdowns, reasoning, and step-by-step explanations
+          for selected problems across supported programming platforms.
+        </p>
+
+        <div class="file">
+          <a href="https://github.com/Jared-Caraan/Thinking-Chair/wiki/Codewars" target="_blank">
+            📘 Codewars — Solution Walkthroughs →
+          </a>
+        </div>
+
+        <div class="file">
+          <a href="https://github.com/Jared-Caraan/Thinking-Chair/wiki/Hackerrank" target="_blank">
+            📗 HackerRank — Problem Explanations →
+          </a>
+        </div>
+
+        <div class="file">
+          <a href="https://github.com/Jared-Caraan/Thinking-Chair/wiki/Leetcode" target="_blank">
+            📙 LeetCode — Algorithm & Data Structure Notes →
+          </a>
+        </div>
       </div>
     </section>
   </div>
